@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, Search, X } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Search, X } from "lucide-react";
 import Logo from "../common/Logo";
 import { NAV_LINKS } from "../../utils/constants";
 
@@ -281,11 +281,11 @@ export default function Navbar() {
             />
 
             <motion.aside
-              initial={{ x: "100%" }}
+              initial={{ x: "-100%" }}
               animate={{ x: 0 }}
-              exit={{ x: "100%" }}
+              exit={{ x: "-100%" }}
               transition={{ type: "spring", stiffness: 320, damping: 34 }}
-              className="fixed inset-y-0 right-0 z-[70] flex h-[100dvh] w-[min(100%,22rem)] flex-col bg-white xl:hidden sm:border-l sm:border-black/8"
+              className="fixed inset-y-0 left-0 z-[70] flex h-[100dvh] w-[min(100%,22rem)] flex-col bg-white xl:hidden sm:border-r sm:border-black/8"
               role="dialog"
               aria-modal="true"
               aria-label="Mobile navigation"
@@ -295,10 +295,10 @@ export default function Navbar() {
                 <button
                   type="button"
                   onClick={closeMenu}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full text-brand-navy/60 transition-colors hover:bg-black/5 hover:text-brand-navy"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full text-brand-navy transition-colors hover:bg-black/5"
                   aria-label="Close menu"
                 >
-                  <X className="h-4 w-4" />
+                  <ArrowLeft className="h-5 w-5" strokeWidth={1.8} />
                 </button>
               </div>
 
@@ -306,7 +306,7 @@ export default function Navbar() {
                 {NAV_LINKS.map((link, index) => (
                   <motion.div
                     key={link.to}
-                    initial={{ opacity: 0, x: 12 }}
+                    initial={{ opacity: 0, x: -12 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.04 + index * 0.03, duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
                   >

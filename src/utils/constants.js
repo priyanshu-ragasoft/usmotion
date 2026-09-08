@@ -79,7 +79,7 @@ export const CLIENTS = [
 
 export const NAV_LINKS = [
   { label: "Home", to: "/" },
-  { label: "Videos", to: "/videos" },
+  // { label: "Videos", to: "/videos" },
   { label: "Categories", to: "/categories" },
   { label: "Services", to: "/services" },
   { label: "Industries", to: "/industries" },
