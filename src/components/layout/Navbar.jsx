@@ -17,7 +17,6 @@ export default function Navbar() {
   const searchRef = useRef(null);
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  const isHome = pathname === "/";
 
   const closeSearch = () => {
     setSearchOpen(false);
@@ -90,8 +89,6 @@ export default function Navbar() {
     closeMenu();
   };
 
-  const solidBar = scrolled || !isHome;
-
   return (
     <>
       <motion.header
@@ -102,8 +99,10 @@ export default function Navbar() {
       >
         <div ref={searchRef} className="mx-auto max-w-[1180px]">
           <div
-            className={`flex items-center justify-between gap-3 overflow-visible rounded-full border border-black/8 bg-white px-3 py-2 shadow-[0_10px_40px_rgba(4,36,85,0.1)] transition-all duration-500 sm:px-4 ${
-              solidBar ? "bg-white" : "bg-white/95 backdrop-blur-xl"
+            className={`flex items-center justify-between gap-3 overflow-visible rounded-full bg-white px-3 py-2 transition-all duration-500 sm:px-4 ${
+              scrolled
+                ? "border border-[#9ca3af] bg-white shadow-[0_12px_40px_rgba(4,36,85,0.18)]"
+                : "border border-transparent bg-white/95 shadow-none backdrop-blur-xl"
             }`}
           >
             <Logo size="md" />

@@ -23,16 +23,14 @@ export default function Hero() {
 
   return (
     <section className="relative h-[100svh] min-h-[34rem] overflow-hidden bg-brand-dark sm:min-h-[42rem]">
-      {HERO_SLIDES.map((item, index) => (
+      <picture>
+        <source media="(min-width: 768px)" srcSet="/laptop.png" />
         <img
-          key={item.image}
-          src={item.image}
+          src="/mobile.png"
           alt=""
-          className={`hero-slide absolute inset-0 h-full w-full object-cover object-[center_30%] sm:object-center ${
-            index === active ? "is-active" : ""
-          }`}
+          className="absolute inset-0 h-full w-full object-cover object-center"
         />
-      ))}
+      </picture>
 
       <div className="absolute inset-0 bg-gradient-to-r from-[#05070B] via-[#05070B]/70 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#05070B]/80 via-transparent to-black/20" />
