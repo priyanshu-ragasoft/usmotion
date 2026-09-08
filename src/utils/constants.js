@@ -30,19 +30,50 @@ export const HERO_SLIDES = [
 
 export const SERVICES = [
   {
+    id: "pre-production",
     title: "Pre-Production",
     description: "The film is designed before a camera moves.",
-    items: ["Concept Development", "Creative Direction", "Scriptwriting", "Storyboarding", "Production Planning"],
+    copy: "We lock the idea, the frames, and the plan before a camera rolls — so production has a clear film to make, not a vague brief.",
+    image: "/laptop.png",
+    relatedTo: "/categories/commercial",
+    items: [
+      "Concept Development",
+      "Creative Direction",
+      "Scriptwriting",
+      "Storyboarding",
+      "Production Planning",
+    ],
   },
   {
+    id: "production",
     title: "Production",
     description: "Direction, light, and performance on set.",
-    items: ["Video Production", "Direction", "Cinematography", "Studio Production", "Location Production"],
+    copy: "On set we hold direction, cinematography, and performance to one standard — studio or location, day or night.",
+    image: "/laptop1.png",
+    relatedTo: "/categories/brand",
+    items: [
+      "Video Production",
+      "Direction",
+      "Cinematography",
+      "Studio Production",
+      "Location Production",
+    ],
   },
   {
+    id: "post-production",
     title: "Post-Production",
     description: "The cut, the grade, and the finish.",
-    items: ["Video Editing", "Color Grading", "Motion Graphics", "Sound Design", "VFX"],
+    copy: "Editorial, color, sound, motion, and VFX are finished in-house so the film stays coherent from the first cut to delivery.",
+    image: "/laptop2.png",
+    relatedTo: "/categories/promotional",
+    items: [
+      "Video Editing",
+      "Color Grading",
+      "Motion Graphics",
+      "Animation",
+      "VFX",
+      "Sound Design",
+    ],
   },
 ];
 
@@ -54,17 +85,90 @@ export const STUDIO_PILLARS = [
 ];
 
 export const INDUSTRIES = [
-  { name: "Automotive", to: "/industries" },
-  { name: "Technology", to: "/industries" },
-  { name: "Fashion", to: "/industries" },
-  { name: "Healthcare", to: "/industries" },
-  { name: "Finance", to: "/industries" },
-  { name: "Consumer Brands", to: "/industries" },
-  { name: "Entertainment", to: "/industries" },
-  { name: "Hospitality", to: "/industries" },
-  { name: "Sports", to: "/industries" },
-  { name: "Corporate", to: "/industries" },
+  {
+    slug: "automotive",
+    name: "Automotive",
+    intro: "Night roads, metal, and pace — films built for brands that live in motion.",
+    image: "/laptop1.png",
+    services: ["production", "post-production"],
+  },
+  {
+    slug: "technology",
+    name: "Technology",
+    intro: "Product, launch, and brand films with precise light and a clean cinematic finish.",
+    image: "/laptop2.png",
+    services: ["pre-production", "post-production"],
+  },
+  {
+    slug: "fashion",
+    name: "Fashion",
+    intro: "Editorial storytelling through casting, movement, and controlled lighting.",
+    image: "/laptop.png",
+    services: ["pre-production", "production"],
+  },
+  {
+    slug: "healthcare",
+    name: "Healthcare",
+    intro: "Human, clear, and premium films for care, science, and trust.",
+    image: "/featured/after-hours.png",
+    services: ["pre-production", "production"],
+  },
+  {
+    slug: "finance",
+    name: "Finance",
+    intro: "Quiet authority on screen — brand films with craft, not noise.",
+    image: "/featured/studio-cut.png",
+    services: ["pre-production", "post-production"],
+  },
+  {
+    slug: "consumer-brands",
+    name: "Consumer Brands",
+    intro: "Campaigns and lifestyle films designed to hold on a large screen and in the feed.",
+    image: "/featured/city-lights.png",
+    services: ["production", "post-production"],
+  },
+  {
+    slug: "entertainment",
+    name: "Entertainment",
+    intro: "Editorial and long-form work with cinematic framing and a measured cut.",
+    image: "/featured/in-frame.png",
+    services: ["production", "post-production"],
+  },
+  {
+    slug: "hospitality",
+    name: "Hospitality",
+    intro: "Atmosphere, place, and service — films that make a room feel premium.",
+    image: "/featured/night-drive.png",
+    services: ["pre-production", "production"],
+  },
+  {
+    slug: "sports",
+    name: "Sports",
+    intro: "Energy, bodies, and pace held with cinematic control.",
+    image: "/featured/precision.png",
+    services: ["production", "post-production"],
+  },
+  {
+    slug: "corporate",
+    name: "Corporate",
+    intro: "Culture, leadership, and company films with the same production standard as brand work.",
+    image: "/featured/next-generation.png",
+    services: ["pre-production", "production", "post-production"],
+  },
 ];
+
+export const VIDEO_INDUSTRIES = {
+  "night-drive": "automotive",
+  "full-motion": "fashion",
+  "next-generation": "corporate",
+  "after-hours": "consumer-brands",
+  "studio-cut": "entertainment",
+  "city-lights": "hospitality",
+  precision: "technology",
+  "in-frame": "consumer-brands",
+  signal: "corporate",
+  horizon: "entertainment",
+};
 
 export const CLIENTS = [
   "Aether",
@@ -235,25 +339,113 @@ export function videoPoster(video) {
   return FEATURED_POSTER_IDS.has(video.id) ? `/featured/${video.id}.png` : video.image;
 }
 
+export const CATEGORIES = [
+  {
+    id: "commercial",
+    slug: "commercial",
+    name: "Commercial Videos",
+    description: "High-impact films built for campaigns, launches, and brand channels.",
+  },
+  {
+    id: "brand",
+    slug: "brand",
+    name: "Brand Videos",
+    description: "Story-led pieces that hold a brand in frame with pace and atmosphere.",
+  },
+  {
+    id: "corporate",
+    slug: "corporate",
+    name: "Corporate Videos",
+    description: "Clear, cinematic films for companies, culture, and leadership.",
+  },
+  {
+    id: "product",
+    slug: "product",
+    name: "Product Videos",
+    description: "Precision lighting and motion for launches and product films.",
+  },
+  {
+    id: "promotional",
+    slug: "promotional",
+    name: "Promotional Videos",
+    description: "Campaign cuts designed to move across social, web, and paid placements.",
+  },
+  {
+    id: "documentary",
+    slug: "documentary",
+    name: "Documentary Videos",
+    description: "Observational storytelling with a measured pace and cinematic finish.",
+  },
+  {
+    id: "music",
+    slug: "music",
+    name: "Music Videos",
+    description: "Performance and editorial films shaped around rhythm and image.",
+  },
+  {
+    id: "fashion",
+    slug: "fashion",
+    name: "Fashion Videos",
+    description: "Editorial movement, casting, and controlled light for fashion films.",
+  },
+  {
+    id: "event",
+    slug: "event",
+    name: "Event Videos",
+    description: "Coverage that still feels cinematic — rooms, energy, and key moments.",
+  },
+  {
+    id: "social",
+    slug: "social",
+    name: "Social Media Videos",
+    description: "Short, sharp cuts built for feeds without losing production value.",
+  },
+  {
+    id: "animation",
+    slug: "animation",
+    name: "Animation",
+    description: "Motion design and animated sequences for brand and product stories.",
+  },
+  {
+    id: "vfx",
+    slug: "vfx",
+    name: "VFX & Motion Graphics",
+    description: "Visual effects and graphics finished to the same studio standard.",
+  },
+];
+
+export const VIDEO_CATEGORIES = {
+  "night-drive": "commercial",
+  "full-motion": "fashion",
+  "next-generation": "commercial",
+  "after-hours": "brand",
+  "studio-cut": "corporate",
+  "city-lights": "brand",
+  "precision": "product",
+  "in-frame": "promotional",
+  signal: "brand",
+  horizon: "documentary",
+};
+
 export const HOME_CATEGORY_ROWS = [
   {
     id: "commercial",
-    title: "Commercial",
+    title: "Commercial Videos",
     ids: ["next-generation", "in-frame", "night-drive", "signal", "precision"],
   },
   {
     id: "brand",
-    title: "Brand",
+    title: "Brand Videos",
     ids: ["after-hours", "full-motion", "city-lights", "studio-cut", "next-generation"],
   },
   {
     id: "corporate",
-    title: "Corporate",
+    title: "Corporate Videos",
     ids: ["horizon", "studio-cut", "in-frame", "city-lights", "after-hours"],
   },
   {
     id: "product",
-    title: "Product",
+    title: "Product Videos",
     ids: ["precision", "night-drive", "full-motion", "signal", "next-generation"],
   },
 ];
@@ -264,3 +456,35 @@ export function videosForRow(ids) {
     .filter(Boolean)
     .map((video) => ({ ...video, image: videoPoster(video) }));
 }
+
+export function videosByCategory(slug) {
+  const row = HOME_CATEGORY_ROWS.find((item) => item.id === slug);
+  const fromMap = FEATURED_VIDEOS.filter((video) => VIDEO_CATEGORIES[video.id] === slug).map(
+    (video) => video.id,
+  );
+  const ids = [...new Set([...(row?.ids ?? []), ...fromMap])];
+  return videosForRow(ids);
+}
+
+export function getCategory(slug) {
+  return CATEGORIES.find((item) => item.slug === slug);
+}
+
+export function getIndustry(slug) {
+  return INDUSTRIES.find((item) => item.slug === slug);
+}
+
+export function videosByIndustry(slug) {
+  const ids = FEATURED_VIDEOS.filter((video) => VIDEO_INDUSTRIES[video.id] === slug).map(
+    (video) => video.id,
+  );
+  return videosForRow(ids);
+}
+
+export const REELS = [
+  { id: "reel-45917", title: "Studio reel", video: "/reels/Video-45917.mp4" },
+  { id: "reel-36340", title: "Studio reel", video: "/reels/Video-36340.mp4" },
+  { id: "reel-73255", title: "Studio reel", video: "/reels/Video-73255.mp4" },
+  { id: "reel-40628", title: "Studio reel", video: "/reels/Video-40628.mp4" },
+  { id: "reel-51667", title: "Studio reel", video: "/reels/Video-51667.mp4" },
+];

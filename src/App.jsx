@@ -5,6 +5,11 @@ import Videos from "./pages/Videos";
 import VideoDetail from "./pages/VideoDetail";
 import PagePlaceholder from "./pages/PagePlaceholder";
 import NotFound from "./pages/NotFound";
+import Categories from "./pages/Categories";
+import CategoryDetail from "./pages/CategoryDetail";
+import Services from "./pages/Services";
+import Industries from "./pages/Industries";
+import IndustryDetail from "./pages/IndustryDetail";
 
 export default function App() {
   return (
@@ -14,36 +19,11 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/videos" element={<Videos />} />
           <Route path="/videos/:videoId" element={<VideoDetail />} />
-          <Route
-            path="/categories"
-            element={
-              <PagePlaceholder
-                eyebrow="BROWSE"
-                title="Categories"
-                description="Category browsing will be added in the portfolio phase."
-              />
-            }
-          />
-          <Route
-            path="/services"
-            element={
-              <PagePlaceholder
-                eyebrow="WHAT WE DO"
-                title="Services"
-                description="The services page will be built in the company pages phase."
-              />
-            }
-          />
-          <Route
-            path="/industries"
-            element={
-              <PagePlaceholder
-                eyebrow="WHO WE WORK WITH"
-                title="Industries"
-                description="The industries page will be built in the company pages phase."
-              />
-            }
-          />
+          {/* <Route path="/categories" element={<Categories />} />
+          <Route path="/categories/:slug" element={<CategoryDetail />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/industries" element={<Industries />} />
+          <Route path="/industries/:slug" element={<IndustryDetail />} /> */}
           <Route
             path="/about"
             element={

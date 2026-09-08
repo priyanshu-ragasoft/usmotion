@@ -1,9 +1,13 @@
 import Hero from "../components/home/Hero";
 import Manifesto from "../components/home/Manifesto";
+import ReelsStrip from "../components/home/ReelsStrip";
 import TrendingNow from "./Frame";
 import FeaturedOriginals from "./Feature";
 import SelectedWork from "../components/home/SelectedWork";
-import Catalogue from "../components/home/Catalogue";
+import CommercialVideos from "../components/home/CommercialVideos";
+import BrandVideos from "../components/home/BrandVideos";
+import CorporateVideos from "../components/home/CorporateVideos";
+import ProductVideos from "../components/home/ProductVideos";
 import ServicesPreview from "../components/home/ServicesPreview";
 import IndustriesPreview from "../components/home/IndustriesPreview";
 import Clients from "../components/home/Clients";
@@ -15,10 +19,14 @@ export default function Home() {
     <>
       <Hero />
       <Manifesto />
+      <ReelsStrip />
       <TrendingNow />
       <FeaturedOriginals />
       <SelectedWork />
-      <Catalogue />
+      <CommercialVideos />
+      <BrandVideos />
+      <CorporateVideos />
+      <ProductVideos />
       <ServicesPreview />
       <IndustriesPreview />
       <Clients />

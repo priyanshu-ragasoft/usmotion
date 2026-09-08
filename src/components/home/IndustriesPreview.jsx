@@ -22,7 +22,7 @@ export default function IndustriesPreview() {
           {INDUSTRIES.map((industry) => (
             <Link
               key={industry.name}
-              to={industry.to}
+              to={`/industries/${industry.slug}`}
               className="group flex items-center justify-between border-b border-white/10 py-5 transition sm:py-6"
             >
               <span className="font-heading text-xl font-semibold tracking-tight text-white/80 transition group-hover:text-white sm:text-2xl">

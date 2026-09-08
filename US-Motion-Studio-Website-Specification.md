@@ -1700,13 +1700,13 @@ The project should be considered ready when:
 -   [x] Homepage has a cinematic hero
 -   [ ] Featured videos are visible
 -   [ ] Video catalogue works
--   [ ] Categories work
+-   [x] Categories work
 -   [ ] Search works
 -   [ ] Filters work
 -   [ ] Video detail pages work
 -   [ ] Related videos work
--   [ ] Services page works
--   [ ] Industries page works
+-   [x] Services page works
+-   [x] Industries page works
 -   [ ] About page works
 -   [ ] Client showcase works
 -   [ ] Contact/enquiry form works

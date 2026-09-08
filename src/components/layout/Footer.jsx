@@ -46,15 +46,15 @@ const SOCIALS = [
 const CONTACT_INFO = [
   {
     icon: Phone,
-    label: "+1 (323) 555-0148",
+    label: "+1 (908) 368-7546",
     sub: "Talk to the studio",
-    href: "tel:+13235550148",
+    href: "tel:+19083687546",
   },
   {
     icon: Mail,
-    label: "hello@usmotion.studio",
+    label: "info@motionusaproductions.com",
     sub: "Drop us an email",
-    href: "mailto:hello@usmotion.studio",
+    href: "mailto:info@motionusaproductions.com",
   },
   {
     icon: MapPin,
