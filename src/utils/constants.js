@@ -1,6 +1,7 @@
 export const HERO_SLIDES = [
   {
-    image: "/hero-banner.png",
+    laptop: "/laptop.png",
+    mobile: "/mobile.png",
     eyebrow: "FEATURED WORK",
     title: "The next generation of motion",
     category: "Commercial Film",
@@ -8,7 +9,8 @@ export const HERO_SLIDES = [
       "Premium video production and cinematic storytelling for brands that want to be seen.",
   },
   {
-    image: "/hero-banner-2.png",
+    laptop: "/laptop1.png",
+    mobile: "/mobile1.png",
     eyebrow: "FEATURED WORK",
     title: "Built for the night drive",
     category: "Automotive",
@@ -16,7 +18,8 @@ export const HERO_SLIDES = [
       "High-impact brand films with cinematic lighting, pace, and production value.",
   },
   {
-    image: "/hero-banner-3.png",
+    laptop: "/laptop2.png",
+    mobile: "/mobile2.png",
     eyebrow: "FEATURED WORK",
     title: "Fashion in full motion",
     category: "Fashion Film",
