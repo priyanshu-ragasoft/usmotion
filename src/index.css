@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-navy: #042455;
+  --color-brand-red: #e2101b;
+  --color-brand-blue: #0264a7;
+  --color-brand-dark: #05070b;
+  --color-brand-surface: #0b1018;
+  --color-brand-elevated: #111827;
+  --color-brand-light: #f5f7fa;
+  --color-brand-text: #171a1f;
+  --color-brand-muted: #6b7280;
+  --color-brand-muted-dark: #9ca3af;
+  --color-brand-border: rgb(255 255 255 / 0.1);
+
+  --font-heading: "Manrope", sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-brand-dark);
+  color: #ffffff;
+}
+
+::selection {
+  background: #e2101b;
+  color: #ffffff;
+}
+
+@layer base {
+  :focus-visible:not(input):not(textarea) {
+    outline: 2px solid var(--color-brand-red);
+    outline-offset: 3px;
+  }
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  appearance: none;
+}
+
+@keyframes hero-pill-fill {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.hero-pill-track {
+  box-shadow: 0 0 18px rgb(226 16 27 / 0.45);
+}
+
+.hero-pill-fill {
+  transform-origin: top;
+  background: #e2101b;
+  animation: hero-pill-fill 8s linear forwards;
+}
+
+.hero-slide {
+  opacity: 0;
+  transform: scale(1.04);
+  transition:
+    opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 8s ease-out;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes brand-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.brand-marquee {
+  animation: brand-marquee 42s linear infinite;
+}
+
+.brand-marquee:hover {
+  animation-play-state: paused;
+}
+
+.film-grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  opacity: 0.028;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
