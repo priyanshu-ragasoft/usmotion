@@ -160,7 +160,7 @@ export default function AdminLogin() {
           <div className="relative z-10 flex h-full flex-col justify-between px-8 py-10 sm:px-12 lg:py-14">
             {/* Official US Motion Logo */}
             <div className="self-start">
-              <img src={LogoAdmin} alt="logo" className="h-32 sm:h-40 max-w-[320px] sm:max-w-[400px] w-auto object-contain shrink-0" />
+              <img src="/Layer 2.png" alt="logo" className="h-32 sm:h-40 max-w-[320px] sm:max-w-[400px] w-auto object-contain shrink-0" />
             </div>
 
             <div className="mt-10 lg:mt-0 max-w-md space-y-6">
