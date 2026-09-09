@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Link, useNavigate } from "react-router-dom";
-import { ChevronLeft, ChevronRight, Clapperboard, Play, Plus } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Clapperboard, Play, Plus } from "lucide-react";
 import { FEATURED_VIDEOS } from "../utils/constants";
 
 const PREVIEW_WIDTH = 360;
 
-export default function TrendingNow({ title = "In rotation", items = FEATURED_VIDEOS }) {
+export default function TrendingNow({ title = "In rotation", items = FEATURED_VIDEOS, categorySlug }) {
   const scrollRef = useRef(null);
   const isDragging = useRef(false);
   const didDrag = useRef(false);
@@ -142,10 +142,11 @@ export default function TrendingNow({ title = "In rotation", items = FEATURED_VI
           </h2>
         </div>
         <Link
-          to="/videos"
-          className="hidden text-sm font-medium text-brand-navy/45 transition hover:text-brand-navy sm:inline"
+          to={categorySlug ? `/videos?category=${categorySlug}` : "/videos"}
+          className="group/link inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-brand-navy/60 transition hover:text-brand-red"
         >
-          View all films
+          <span>View all films</span>
+          <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-1" />
         </Link>
       </div>
 
@@ -170,9 +171,8 @@ export default function TrendingNow({ title = "In rotation", items = FEATURED_VI
           onPointerUp={stopDrag}
           onPointerCancel={stopDrag}
           onClickCapture={onClickCapture}
-          className={`scrollbar-none flex gap-3 overflow-x-auto px-5 pt-2 pb-10 sm:gap-4 sm:px-8 lg:gap-5 lg:px-12 ${
-            dragging ? "cursor-grabbing" : "cursor-grab"
-          }`}
+          className={`scrollbar-none flex gap-3 overflow-x-auto px-5 pt-2 pb-10 sm:gap-4 sm:px-8 lg:gap-5 lg:px-12 ${dragging ? "cursor-grabbing" : "cursor-grab"
+            }`}
         >
           {items.map((item, index) => (
             <Link

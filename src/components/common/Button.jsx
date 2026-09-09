@@ -15,8 +15,9 @@ export default function Button({
   variant = "primary",
   className = "",
   onClick,
+  disabled = false,
 }) {
-  const classes = `inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold tracking-wide transition duration-300 ${variants[variant]} ${className}`;
+  const classes = `inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold tracking-wide transition duration-300 ${variants[variant]} ${disabled ? "pointer-events-none opacity-60" : ""} ${className}`;
 
   if (to) {
     return (
@@ -35,7 +36,7 @@ export default function Button({
   }
 
   return (
-    <button type={type} onClick={onClick} className={classes}>
+    <button type={type} onClick={onClick} disabled={disabled} className={classes}>
       {children}
     </button>
   );

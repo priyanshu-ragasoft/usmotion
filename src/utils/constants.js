@@ -191,6 +191,16 @@ export const NAV_LINKS = [
   { label: "Contact", to: "/contact" },
 ];
 
+export const FOOTER_LINKS = [
+  { label: "Home", to: "/" },
+  { label: "Videos", to: "/videos" },
+  { label: "Categories", to: "/categories" },
+  // { label: "Services", to: "/services" },
+  // { label: "Industries", to: "/industries" },
+  { label: "About", to: "/about" },
+  // { label: "Contact", to: "/contact" },
+];
+
 export const FEATURED_VIDEOS = [
   {
     id: "night-drive",
@@ -487,4 +497,78 @@ export const REELS = [
   { id: "reel-73255", title: "Studio reel", video: "/reels/Video-73255.mp4" },
   { id: "reel-40628", title: "Studio reel", video: "/reels/Video-40628.mp4" },
   { id: "reel-51667", title: "Studio reel", video: "/reels/Video-51667.mp4" },
+];
+
+export const STUDIO_CONTACT = {
+  email: "info@motionusaproductions.com",
+  phone: "+1 (908) 368-7546",
+  phoneHref: "tel:+19083687546",
+  emailHref: "mailto:info@motionusaproductions.com",
+  locations: [
+    { city: "Los Angeles", note: "Primary production base" },
+    { city: "New York", note: "East coast shoots" },
+    { city: "Worldwide", note: "On location, anywhere the film needs" },
+  ],
+};
+
+export const ABOUT_STATS = [
+  { value: "12+", label: "Years in motion" },
+  { value: "180+", label: "Films delivered" },
+  { value: "40+", label: "Brand partners" },
+  { value: "3", label: "Cities of production" },
+];
+
+export const TEAM = [
+  {
+    role: "Creative Direction",
+    copy: "The idea, the frames, and the tone of the film — locked before cameras roll.",
+    image: "/laptop.png",
+  },
+  {
+    role: "Cinematography",
+    copy: "Light, lens, and movement held to one standard on studio floors and on location.",
+    image: "/laptop1.png",
+  },
+  {
+    role: "Production",
+    copy: "Schedules, crews, and performance — so the day on set serves the cut.",
+    image: "/featured/studio-cut.png",
+  },
+  {
+    role: "Editorial & Color",
+    copy: "Pace, grade, sound, and finish in-house, from the first assembly to delivery.",
+    image: "/laptop2.png",
+  },
+];
+
+export const APPROACH = [
+  {
+    title: "Concept first",
+    copy: "We design the film before a camera moves — boards, references, and a clear brief.",
+  },
+  {
+    title: "Hold the frame",
+    copy: "Direction and cinematography stay exacting, whether the set is a stage or a street.",
+  },
+  {
+    title: "Finish in-house",
+    copy: "Edit, color, sound, motion, and VFX stay under one roof so the film stays coherent.",
+  },
+];
+
+export const BUDGET_RANGES = [
+  "Under $25k",
+  "$25k – $75k",
+  "$75k – $150k",
+  "$150k – $300k",
+  "$300k+",
+  "To be discussed",
+];
+
+export const PROJECT_TIMELINES = [
+  "As soon as possible",
+  "1 – 2 months",
+  "3 – 6 months",
+  "6+ months",
+  "Flexible",
 ];

@@ -12,6 +12,7 @@ const FEATURED_ITEMS = FEATURED_VIDEOS.slice(0, 8).map((video, index) => ({
 export default function FeaturedOriginals({
   title = "Featured originals",
   items = FEATURED_ITEMS,
+  categorySlug,
 }) {
   const scrollRef = useRef(null);
   const hoverTimer = useRef(null);
@@ -128,10 +129,10 @@ export default function FeaturedOriginals({
           <h2 className="mt-3 font-heading text-3xl font-bold tracking-[-0.03em] text-brand-navy sm:text-4xl">{title}</h2>
         </div>
         <Link
-          to="/videos"
-          className="flex items-center gap-0.5 text-sm font-medium text-brand-navy/45 transition-colors hover:text-brand-navy"
+          to={categorySlug ? `/videos?category=${categorySlug}` : "/videos"}
+          className="flex items-center gap-0.5 text-sm font-semibold text-brand-navy/60 transition-colors hover:text-brand-red"
         >
-          See more
+          <span>See more</span>
           <ChevronRight className="h-4 w-4" />
         </Link>
       </div>
@@ -155,9 +156,8 @@ export default function FeaturedOriginals({
           onPointerUp={stopDrag}
           onPointerCancel={stopDrag}
           onClickCapture={onClickCapture}
-          className={`scrollbar-none flex items-stretch gap-2 overflow-x-auto px-5 py-1 sm:gap-2.5 sm:px-8 lg:px-12 ${
-            dragging ? "cursor-grabbing" : "cursor-grab"
-          }`}
+          className={`scrollbar-none flex items-stretch gap-2 overflow-x-auto px-5 py-1 sm:gap-2.5 sm:px-8 lg:px-12 ${dragging ? "cursor-grabbing" : "cursor-grab"
+            }`}
         >
           {items.map((item) => {
             const isHovered = hoveredId === item.id;
@@ -182,11 +182,10 @@ export default function FeaturedOriginals({
                   className="absolute inset-0 h-full w-full object-cover object-center"
                 />
                 <div
-                  className={`absolute inset-0 transition-opacity duration-300 ${
-                    isHovered
+                  className={`absolute inset-0 transition-opacity duration-300 ${isHovered
                       ? "bg-gradient-to-r from-black/75 via-black/25 to-transparent opacity-100"
                       : "bg-gradient-to-t from-black/55 via-transparent to-transparent opacity-100"
-                  }`}
+                    }`}
                 />
 
                 {item.badge ? (
@@ -200,11 +199,10 @@ export default function FeaturedOriginals({
                 </span>
 
                 <div
-                  className={`absolute inset-x-0 bottom-0 z-10 p-3.5 transition-all duration-500 ${
-                    isHovered
+                  className={`absolute inset-x-0 bottom-0 z-10 p-3.5 transition-all duration-500 ${isHovered
                       ? "translate-x-0 opacity-100 delay-100"
                       : "pointer-events-none -translate-x-4 opacity-0"
-                  }`}
+                    }`}
                   style={{ transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)" }}
                 >
                   <h3 className="font-heading text-2xl font-extrabold tracking-tight text-white uppercase drop-shadow-md">

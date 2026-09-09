@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { videosForRow } from "../../utils/constants";
 
-export default function CategoryRow({ title, ids, surface = "white" }) {
+export default function CategoryRow({ title, ids, surface = "white", categorySlug }) {
   const items = videosForRow(ids);
+  const targetCategoryUrl = categorySlug ? `/videos?category=${categorySlug}` : "/videos";
+
   const scrollRef = useRef(null);
   const isDragging = useRef(false);
   const didDrag = useRef(false);
@@ -100,13 +102,14 @@ export default function CategoryRow({ title, ids, surface = "white" }) {
 
   return (
     <section className={`relative py-6 sm:py-8 ${bgClass}`}>
-      <div className="mx-auto mb-5 flex max-w-[1600px] items-end justify-between px-5 sm:px-8 lg:px-12">
+      <div className="mx-auto mb-5 flex max-w-[1600px] items-center justify-between px-5 sm:px-8 lg:px-12">
         <h3 className="font-heading text-lg font-bold tracking-tight text-brand-navy sm:text-xl">{title}</h3>
         <Link
-          to="/videos"
-          className="hidden text-sm font-medium text-brand-navy/40 transition hover:text-brand-navy sm:inline"
+          to={targetCategoryUrl}
+          className="group/link inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-brand-navy/60 transition hover:text-brand-red"
         >
-          View all
+          <span>View all</span>
+          <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-1" />
         </Link>
       </div>
 
@@ -131,9 +134,8 @@ export default function CategoryRow({ title, ids, surface = "white" }) {
           onPointerUp={stopDrag}
           onPointerCancel={stopDrag}
           onClickCapture={onClickCapture}
-          className={`scrollbar-none flex gap-3 overflow-x-auto px-5 pb-2 sm:gap-4 sm:px-8 lg:px-12 ${
-            dragging ? "cursor-grabbing" : "cursor-grab"
-          }`}
+          className={`scrollbar-none flex gap-3 overflow-x-auto px-5 pb-2 sm:gap-4 sm:px-8 lg:px-12 ${dragging ? "cursor-grabbing" : "cursor-grab"
+            }`}
         >
           {items.map((item) => (
             <Link

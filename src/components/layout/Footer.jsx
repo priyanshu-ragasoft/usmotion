@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, ArrowUp, Mail, MapPin, Phone } from "lucide-react";
-import Logo from "../common/Logo";
-import { NAV_LINKS } from "../../utils/constants";
+import { FOOTER_LINKS } from "../../utils/constants";
 
 const COMPANY_LINKS = [
   { label: "Services", to: "/services" },
   { label: "Industries", to: "/industries" },
-  { label: "About", to: "/about" },
+  // { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
 ];
 
@@ -104,13 +103,15 @@ export default function Footer() {
       <div className="relative mx-auto max-w-[1280px] px-5 pb-16 pt-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-10">
           <div>
-            <Logo size="lg" />
+            <Link to="/" className="inline-block">
+              <img src="/Layer 2.png" alt="US Motion Logo" className="h-36 sm:h-44 max-w-[320px] sm:max-w-[420px] w-auto object-contain" />
+            </Link>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/50">
               Premium video production and cinematic storytelling for brands that want to be seen.
             </p>
           </div>
 
-          <FooterLinkList title="EXPLORE" links={NAV_LINKS} />
+          <FooterLinkList title="EXPLORE" links={FOOTER_LINKS} />
           <FooterLinkList title="STUDIO" links={COMPANY_LINKS} />
 
           <div>
@@ -182,12 +183,16 @@ export default function Footer() {
         <div className="mx-auto flex max-w-[1280px] flex-col items-center gap-3 px-5 py-5 text-xs text-white/40 sm:flex-row sm:justify-between sm:px-6 lg:px-8">
           <span>© {new Date().getFullYear()} US Motion Studio. All rights reserved.</span>
           <div className="flex items-center gap-4">
-            <Link to="/contact" className="transition-colors hover:text-white">
-              Privacy
+            <Link to="/privacy" className="transition-colors hover:text-white">
+              Privacy Policy
             </Link>
             <span className="text-white/20">|</span>
-            <Link to="/contact" className="transition-colors hover:text-white">
-              Terms
+            <Link to="/terms" className="transition-colors hover:text-white">
+              Terms &amp; Conditions
+            </Link>
+            <span className="text-white/20">|</span>
+            <Link to="/admin/login" className="transition-colors hover:text-brand-red font-semibold">
+              Admin Portal
             </Link>
           </div>
         </div>

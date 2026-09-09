@@ -1,20 +1,23 @@
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Play } from "lucide-react";
-import { FEATURED_VIDEOS } from "../utils/constants";
+import { FEATURED_VIDEOS, videoPoster } from "../utils/constants";
 import NotFound from "./NotFound";
 
 export default function VideoDetail() {
   const { videoId } = useParams();
   const index = FEATURED_VIDEOS.findIndex((item) => item.id === videoId);
-  const video = FEATURED_VIDEOS[index];
+  const rawVideo = FEATURED_VIDEOS[index];
 
-  if (!video) {
+  if (!rawVideo) {
     return <NotFound />;
   }
 
+  const video = { ...rawVideo, image: videoPoster(rawVideo) };
   const previous = FEATURED_VIDEOS[index - 1];
   const next = FEATURED_VIDEOS[index + 1];
-  const related = FEATURED_VIDEOS.filter((item) => item.id !== video.id).slice(0, 4);
+  const related = FEATURED_VIDEOS.filter((item) => item.id !== video.id)
+    .slice(0, 4)
+    .map((item) => ({ ...item, image: videoPoster(item) }));
 
   return (
     <article className="bg-brand-light text-brand-text">

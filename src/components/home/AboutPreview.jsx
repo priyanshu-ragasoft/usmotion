@@ -2,12 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import Container from "../common/Container";
 
-const STATS = [
-  { value: "12+", label: "Years in motion" },
-  { value: "180+", label: "Films delivered" },
-  { value: "40+", label: "Brand partners" },
-  { value: "3", label: "Cities of production" },
-];
+import { ABOUT_STATS } from "../../utils/constants";
 
 export default function AboutPreview() {
   return (
@@ -42,7 +37,7 @@ export default function AboutPreview() {
         </div>
 
         <div className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-black/8 sm:grid-cols-4">
-          {STATS.map((stat) => (
+          {ABOUT_STATS.map((stat) => (
             <div key={stat.label} className="bg-brand-light px-5 py-7 sm:px-6 sm:py-8">
               <p className="font-heading text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">{stat.value}</p>
               <p className="mt-2 text-sm text-brand-muted">{stat.label}</p>

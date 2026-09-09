@@ -21,7 +21,7 @@ function ReelCard({ item, index, active, onFocus }) {
 
     const play = () => {
       const attempt = video.play();
-      if (attempt) attempt.catch(() => {});
+      if (attempt) attempt.catch(() => { });
     };
 
     const io = new IntersectionObserver(
@@ -69,14 +69,12 @@ function ReelCard({ item, index, active, onFocus }) {
     <article
       ref={wrapRef}
       onMouseEnter={onFocus}
-      className={`group relative w-[min(70vw,236px)] shrink-0 snap-center transition duration-500 ease-out sm:w-auto sm:min-w-0 ${
-        active ? "z-10 lg:-translate-y-3 lg:scale-[1.06]" : "lg:scale-[0.94] lg:opacity-80"
-      }`}
+      className={`group relative w-[min(70vw,236px)] shrink-0 snap-center transition duration-500 ease-out sm:w-auto sm:min-w-0 ${active ? "z-10 lg:-translate-y-3 lg:scale-[1.06]" : "lg:scale-[0.94] lg:opacity-80"
+        }`}
     >
       <div
-        className={`relative overflow-hidden rounded-[1.75rem] bg-[#07101c] p-[6px] shadow-[0_28px_50px_-24px_rgba(4,36,85,0.55)] transition duration-500 ${
-          active ? "ring-2 ring-brand-red shadow-[0_30px_60px_-20px_rgba(226,16,27,0.45)]" : "ring-1 ring-black/10"
-        }`}
+        className={`relative overflow-hidden rounded-[1.75rem] bg-[#07101c] p-[6px] shadow-[0_28px_50px_-24px_rgba(4,36,85,0.55)] transition duration-500 ${active ? "ring-2 ring-brand-red shadow-[0_30px_60px_-20px_rgba(226,16,27,0.45)]" : "ring-1 ring-black/10"
+          }`}
       >
         <div className="relative aspect-[9/16] overflow-hidden rounded-[1.4rem] bg-black">
           <video
@@ -94,9 +92,9 @@ function ReelCard({ item, index, active, onFocus }) {
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/25" />
 
           <div className="absolute top-3 right-3 left-3 z-10 flex items-center justify-between">
-            <span className="rounded-full bg-black/45 px-2.5 py-1 font-heading text-[10px] font-bold tracking-[0.18em] text-white uppercase backdrop-blur-sm">
+            {/* <span className="rounded-full bg-black/45 px-2.5 py-1 font-heading text-[10px] font-bold tracking-[0.18em] text-white uppercase backdrop-blur-sm">
               Take 0{index + 1}
-            </span>
+            </span> */}
             <span className="flex items-center gap-1 rounded-full bg-brand-red px-2 py-1 text-[10px] font-bold tracking-[0.16em] text-white uppercase">
               <span className="reel-live-dot h-1.5 w-1.5 rounded-full bg-white" />
               Live

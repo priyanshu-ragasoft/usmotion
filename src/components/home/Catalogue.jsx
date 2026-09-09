@@ -23,6 +23,7 @@ export default function Catalogue() {
             key={row.id}
             title={row.title}
             ids={row.ids}
+            categorySlug={row.id}
             surface={index % 2 === 0 ? "white" : "light"}
           />
         ))}

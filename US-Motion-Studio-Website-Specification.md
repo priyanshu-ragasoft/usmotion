@@ -1707,9 +1707,9 @@ The project should be considered ready when:
 -   [ ] Related videos work
 -   [x] Services page works
 -   [x] Industries page works
--   [ ] About page works
+-   [x] About page works
 -   [ ] Client showcase works
--   [ ] Contact/enquiry form works
+-   [x] Contact/enquiry form works
 -   [ ] CMS/API integration works
 -   [ ] YouTube/Vimeo integration works
 -   [x] Mobile navigation works

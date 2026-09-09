@@ -20,7 +20,7 @@ export default function SelectedWork() {
           eyebrow="Portfolio"
           title="Selected work"
           description="Recent films shaped through concept, production, and post — made to hold on a large screen."
-          actionTo="/videos"
+          actionTo="/categories"
           actionLabel="View all films"
         />
 
